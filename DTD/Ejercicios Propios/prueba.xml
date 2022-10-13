@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Fruteria SYSTEM "prueba.dtd">
+
+<Fruteria>
+    <frutas nombre="Fresa" codigo="F1" estado="bueno" tipo="generico d" cultivo="secano"/>
+    <frutas nombre="Platano Canario" codigo="P1" estado="normal" tipo="nacional"/>
+    <frutas nombre="Mango" codigo="M1" estado="bueno" tipo="exotico"/>
+    <verduras nombre="Esparragos" codigo="E1" estado="bueno" tipo="generico"/>
+    <verduras nombre="Habas" codigo="H1" estado="normal" tipo="generico" oferta="rebajas 50 por ciento"/>    
+    <procedencia>Lugar de donde viene la comida
+        <huerta>
+            <grande codigo="F1" />
+            <pequeña codigo="P1"/>
+        </huerta>
+        <cooperativa>
+            <nacional codigo="E1"/>
+            <local/>
+        </cooperativa>
+        <tienda/>
+    </procedencia>
+    <hortalizas>
+        <bulbos>No hay existencias</bulbos>
+    </hortalizas>
+</Fruteria>

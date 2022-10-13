@@ -1,0 +1,31 @@
+<!ELEMENT Fruteria (frutas+,verduras*,procedencia?,hortalizas?)*>
+
+<!ENTITY % datosComida    "nombre CDATA #REQUIRED
+                           codigo ID #REQUIRED 
+                           estado (bueno | malo | normal)  #IMPLIED
+                           tipo NMTOKENS #REQUIRED
+                            cultivo CDATA #IMPLIED">
+<!ELEMENT frutas EMPTY>
+ <!ATTLIST frutas %datosComida;>
+ 
+<!ELEMENT verduras EMPTY>
+ <!ATTLIST verduras %datosComida;
+                        oferta NMTOKENS #FIXED "rebajas 50 por ciento">
+
+<!ELEMENT hortalizas (bulbos|semillas)>
+<!ELEMENT bulbos (#PCDATA)>
+<!ELEMENT semillas EMPTY>
+
+<!ELEMENT procedencia (#PCDATA | huerta | cooperativa| tienda)*>
+  <!ELEMENT huerta (grande,pequeña?)>
+  <!ELEMENT grande EMPTY>
+  <!ATTLIST grande codigo IDREFS #REQUIRED>
+  <!ELEMENT pequeña EMPTY>
+  <!ATTLIST pequeña codigo IDREFS #REQUIRED>
+  <!ELEMENT cooperativa (nacional+, (local |provincial))>
+  <!ELEMENT nacional EMPTY>
+  <!ATTLIST nacional codigo IDREFS #REQUIRED>
+  <!ELEMENT local EMPTY>
+  <!ELEMENT provincial EMPTY>
+
+  <!ELEMENT tienda EMPTY>
